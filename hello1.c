@@ -28,10 +28,8 @@ void print_hello(void)
 	struct hello_event *ev;
 
 	ev = kmalloc(sizeof(*ev), GFP_KERNEL);
-	if (!ev) {
-		pr_err("hello1: out of memory, greeting skipped\n");
+	if (!ev)
 		return;
-	}
 
 	ev->time_before = ktime_get();
 	pr_info("Hello, world!\n");
